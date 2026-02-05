@@ -1,0 +1,109 @@
+/* Page container */
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0f172a; /* dark background */
+  padding: 20px;
+}
+
+/* Form wrapper */
+.form {
+  width: 100%;
+  max-width: 380px;
+  background: #020617;
+  padding: 28px;
+  border-radius: 10px;
+  border: 1px solid #1e293b;
+}
+
+/* Title */
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+/* Group */
+.group {
+  margin-bottom: 14px;
+}
+
+/* Label (REUSABLE) */
+.label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+/* Input (REUSABLE) */
+.input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: #020617;
+  border: 1px solid #334155;
+  color: #f8fafc;
+  font-size: 14px;
+  outline: none;
+}
+
+.input::placeholder {
+  color: #64748b;
+}
+
+.input:focus {
+  border-color: #38bdf8;
+}
+
+/* Button (REUSABLE) */
+.button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 11px;
+  background: #38bdf8;
+  color: #020617;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #0ea5e9;
+}
+
+/* Text under form */
+.text {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+/* Link */
+.link {
+  color: #38bdf8;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* Error */
+.error {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #f87171;
+}
+
+/* Success */
+.success {
+  margin-bottom: 12px;
+  text-align: center;
+  font-size: 13px;
+  color: #4ade80;
+}
