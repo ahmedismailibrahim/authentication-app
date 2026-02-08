@@ -1,9 +1,12 @@
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 const createAccessToken = (user) => {
-  jwt.sign(
+  return jwt.sign(
     { id: user._id, email: user.email },
     process.env.ACCESS_TOKEN_SECRET,
     { expiresIn: "15m" },
@@ -11,7 +14,7 @@ const createAccessToken = (user) => {
 };
 
 const createRefreshToken = (user) => {
-  jwt.sign(
+  return jwt.sign(
     { id: user._id, email: user.email },
     process.env.REFRESH_TOKEN_SECRET,
     { expiresIn: "7d" },
@@ -59,7 +62,7 @@ const registerUser = async (req, res) => {
   await newUser.save();
   res
     .status(201)
-    .json({ message: "User registered successfully", accessToken });
+    .json({ message: "User registered successfully", accessToken,email: newUser.email });
 };
 
 // Login User
@@ -88,7 +91,7 @@ const loginUser = async (req, res) => {
 
   res.cookie("jwt", refreshToken, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
+    secure: true,
     sameSite: "None",
     maxAge: 7 * 24 * 60 * 60 * 1000,
   });
@@ -96,7 +99,8 @@ const loginUser = async (req, res) => {
   user.refreshToken = refreshToken;
   await user.save();
 
-  res.status(200).json({ message: "Login successful", accessToken });
+
+  res.status(200).json({ message: "Login successful", accessToken,email: user.email });
 };
 
 const refresh = async (req, res) => {

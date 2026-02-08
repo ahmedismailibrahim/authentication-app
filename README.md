@@ -41,15 +41,15 @@ developer workflow :
 
 
 
-        -OAuth authentication (Google, GitHub, etc.)
+    -OAuth authentication (Google, GitHub, etc.)
 
-        -Email verification after registration
+    -Email verification after registration
 
-        -Password reset / forgot password flow
+    -Password reset / forgot password flow
 
-        -Token rotation for refresh tokens
+    -Token rotation for refresh tokens
 
-        -Role-based access control (Admin, User, Moderator)
+    -Role-based access control (Admin, User, Moderator)
 
 -------------------------------------------------------
 
@@ -75,9 +75,31 @@ codes :
     npm install react-redux
     npm install axios 
     npm i react-router-dom
+    npm i js-cookie
+
+    authentication-app/frontend
+        ├── public/
+        ├── src/
+            ├── app/
+            │    └── store.js
+            ├── features/
+            │    └── auth/
+            │         ├── authSlice.js
+            │         └── authApi.js
+            ├── components/
+            │         ├── auth
+            │         │     ├──LoginForm.jsx
+            │         │     ├──SignupForm.jsx
+            │         ├──RootLayout.jsx
+            ├── pages/
+            ├── hooks/
+            └── App.jsx
+        ├── /
+        ├── /
+        ├── /
 
 
 --------------------------------
  notes ::
   -Redux Toolkit is a state management library used with React.
- - rafc,rfce,rfc, rsf create react structure 
+ - rafc,rfce,rfc, rsf create react code structure 

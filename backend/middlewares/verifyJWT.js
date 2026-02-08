@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken");
-
+const dotenv = require("dotenv");
+dotenv.config();
 const verifyJWT = (req, res, next) => {
   // in express , headers names are automatically converted to lowercase
   //Authorization header supports MULTIPLE schemes , Authorization : (Basic , Bearer , Digest ..) <token> .

@@ -7,6 +7,7 @@ const corsOptions = require("./config/corsOptions");
 const cookieParser = require("cookie-parser");
 const path = require("path");
 
+
 dotenv.config();
 
 const app = express();
