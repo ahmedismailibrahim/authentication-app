@@ -14,7 +14,7 @@ const LoginForm = () => {
 
   const [errors, setErrors] = useState({});
 
-  const [login, { isError, error }] = useLoginMutation();
+  const [login, { isError, error , isLoading }] = useLoginMutation();
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -90,7 +90,8 @@ const LoginForm = () => {
            {errors.password && <p className={styles.error}>{errors.password}</p>}
         </div>
 
-        <button className={styles.button}>Login</button>
+        <button className={styles.button} disabled={isLoading}
+          type="submit">{isLoading ? "Logging in..." : "Login"}</button >
 
         <p className={styles.text}>
           Don’t have an account? <Link className={styles.link} to="/auth/signup">Sign up</Link>
